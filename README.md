@@ -21,6 +21,11 @@ This repo contains files related to Forwards, the R foundation taskforce promoti
 
 * [Create a hex sticker based on the logo](R/create_hex_sticker.R).
 
+## Legalese
+
+The Forwards logo is a derivative of the [R logo](https://www.r-project.org/logo/Rlogo.svg), [©2016 The R Foundation](https://www.r-project.org/logo/), used 
+under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The 
+Forwards logo is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), ©2016 Forwards.
 
 ### Meta
 
