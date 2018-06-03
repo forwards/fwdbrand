@@ -24,15 +24,18 @@ params:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
 ```
 
 [Full Name]
 
 has participated in the
 
-```{r}
-params$workshop
+```{r, results = 'asis'}
+# thanks so much https://stackoverflow.com/questions/46226364/passing-parameters-in-rmarkdown-to-the-text-or-headings
+cat("#", params$workshop, "\n")
 ```
 
 date
