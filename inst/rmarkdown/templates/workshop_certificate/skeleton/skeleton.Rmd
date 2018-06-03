@@ -1,0 +1,45 @@
+---
+title: "CERTIFICATE"
+output: pdf_document
+params:
+  date: 
+    label: Date of workshop
+    value: !r lubridate::today() 
+    input: date
+  workshop:
+    label: Workshop title
+    value: R Package Development Workshop
+    input: text
+  certifyer:
+    label: Certifying person
+    value: Heather Turner, Workshop Tutor, Forwards Teaching Team Member
+    input: text
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+[Full Name]
+
+has participated in the
+
+```r
+params$workshop
+```
+
+date
+
+Workshop contents:
+
+    Making code into an R package
+    Collaborative coding with GitHub
+    Writing a vignette or an article
+    Building a package webpage
+    Submitting a package to CRAN
+
+[Space for signature]
+[Full name of certifying person]
+[Position of certifying person (e.g. Workshop Tutor or Forwards Teaching Team Member or similar as appropriate)]
+
+Forwards: the R Foundation taskforce on women and other under-represented groups (https://forwards.github.io/)
