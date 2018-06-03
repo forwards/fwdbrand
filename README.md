@@ -5,21 +5,21 @@ This repo contains files related to Forwards, the R foundation taskforce promoti
 
 # Logo
 
-![](assets/logo.png)
+![](inst/extdata/assets/logo.png)
 
 ## Files 
 
-* Logo (transparent background) as [png](assets/forwards.png) and [svg](assets/forwards.svg). [White background logo](assets/white_bg_forwards.png).
+* Logo (transparent background) as [png](inst/extdata/assets/forwards.png) and [svg](inst/extdata/assets/forwards.svg). [White background logo](inst/extdata/assets/white_bg_forwards.png).
 
-* [Hex logo](assets/forwards_hex.png).
+* [Hex logo](inst/extdata/assets/forwards_hex.png).
 
 ## Code
 
-* [Create the logo](R/create_original_transparent_logo.R).
+* [Create the logo](inst/assets-scripts/create_original_transparent_logo.R).
 
-* [Create its white background version](R/create_white_bg_logo.R).
+* [Create its white background version](inst/assets-scripts/create_white_bg_logo.R).
 
-* [Create a hex sticker based on the logo](R/create_hex_sticker.R).
+* [Create a hex sticker based on the logo](inst/assets-scripts/create_hex_sticker.R).
 
 ## Legalese
 
