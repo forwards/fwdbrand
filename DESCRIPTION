@@ -1,0 +1,13 @@
+Package: branding
+Version: 0.0.0.9000
+Title: Distributes Forwards Branding Material.
+Description: Distributes Forwards branding material: logos, templates.
+Authors@R: c(person("Heather", "Turner", role = c("aut", "cre"),
+                    email = "ht@heatherturner.net"),
+             person("Maëlle", "Salmon", role = "aut",
+                    email = "maelle.salmon@yahoo.se"),
+             person("Paul", "Murrell", role = "ctb"))
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+License: GPL-3
