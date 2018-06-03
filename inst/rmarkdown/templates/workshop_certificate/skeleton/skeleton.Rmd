@@ -29,16 +29,21 @@ knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE)
 ```
 
-[Full Name]
+```{r, results = 'asis'}
+# thanks so much https://stackoverflow.com/questions/46226364/passing-parameters-in-rmarkdown-to-the-text-or-headings
+cat("##", params$attendee, "\n")
+```
 
 has participated in the
 
 ```{r, results = 'asis'}
-# thanks so much https://stackoverflow.com/questions/46226364/passing-parameters-in-rmarkdown-to-the-text-or-headings
 cat("#", params$workshop, "\n")
 ```
 
-date
+```{r, results = 'asis'}
+# thanks so much https://stackoverflow.com/questions/46226364/passing-parameters-in-rmarkdown-to-the-text-or-headings
+cat("##", as.character(params$date), "\n")
+```
 
 Workshop contents:
 
@@ -49,7 +54,13 @@ Workshop contents:
     Submitting a package to CRAN
 
 [Space for signature]
-[Full name of certifying person]
-[Position of certifying person (e.g. Workshop Tutor or Forwards Teaching Team Member or similar as appropriate)]
 
-Forwards: the R Foundation taskforce on women and other under-represented groups (https://forwards.github.io/)
+```{r, results = 'asis'}
+cat("##", params$certifyer, "\n")
+```
+
+```{r, results = 'asis'}
+cat("###", params$credentials, "\n")
+```
+
+Forwards: the R Foundation taskforce on women and other under-represented groups [https://forwards.github.io/](https://forwards.github.io/).
