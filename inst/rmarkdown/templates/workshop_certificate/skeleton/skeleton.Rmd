@@ -10,6 +10,10 @@ params:
     label: Workshop title
     value: R Package Development Workshop
     input: text
+  curriculum:
+    label: path to curriculum
+    value: !r system.file("rmarkdown", "templates", "workshop_certificate", "resources", "default_workshop_contents.md", package = "branding")
+    input: text
   certifyer:
     label: Certifying person full name
     value: Heather Turner
@@ -37,21 +41,23 @@ cat("##", params$attendee, "\n")
 has participated in the
 
 ```{r, results = 'asis'}
-cat("#", params$workshop, "\n")
+cat("#", as.character(params$workshop), "\n")
 ```
 
 ```{r, results = 'asis'}
-# thanks so much https://stackoverflow.com/questions/46226364/passing-parameters-in-rmarkdown-to-the-text-or-headings
 cat("##", as.character(params$date), "\n")
 ```
 
 Workshop contents:
 
-    Making code into an R package
-    Collaborative coding with GitHub
-    Writing a vignette or an article
-    Building a package webpage
-    Submitting a package to CRAN
+```{r, results = 'asis', child = params$curriculum}
+
+```
+
+```{r, results = 'asis'}
+cat("##", params$certifyer, "\n")
+```
+    
 
 [Space for signature]
 
