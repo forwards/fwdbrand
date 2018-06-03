@@ -14,6 +14,10 @@ params:
     label: Certifying person
     value: Heather Turner, Workshop Tutor, Forwards Teaching Team Member
     input: text
+  attendee:
+    label: Attendee
+    value: Maëlle Salmon
+    input: text
 ---
 
 ```{r setup, include=FALSE}
@@ -24,7 +28,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 has participated in the
 
-```r
+```{r}
 params$workshop
 ```
 
