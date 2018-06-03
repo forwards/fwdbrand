@@ -54,12 +54,8 @@ Workshop contents:
 
 ```
 
-```{r, results = 'asis'}
-cat("##", params$certifyer, "\n")
-```
-    
 
-[Space for signature]
+\vspace{1cm}
 
 ```{r, results = 'asis'}
 cat("##", params$certifyer, "\n")
