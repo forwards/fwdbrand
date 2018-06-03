@@ -11,8 +11,11 @@ params:
     value: R Package Development Workshop
     input: text
   certifyer:
-    label: Certifying person
-    value: Heather Turner, Workshop Tutor, Forwards Teaching Team Member
+    label: Certifying person full name
+    value: Heather Turner
+  credentials:
+    label: Certifying person credentials
+    value: Workshop Tutor, Forwards Teaching Team Member
     input: text
   attendee:
     label: Attendee
