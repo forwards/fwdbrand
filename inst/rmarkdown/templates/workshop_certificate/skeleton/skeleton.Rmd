@@ -8,6 +8,7 @@ header-includes:
   - \usepackage{fontspec}
   - \usepackage[default,osfigures,scale=0.95]{opensans}
   - \usepackage[T1]{fontenc}
+  - \usepackage{wallpaper}
 params:
   date: 
     label: Date of workshop
@@ -33,6 +34,8 @@ params:
     value: Maëlle Salmon
     input: text
 ---
+
+\CenterWallPaper{1}{logo.png}
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
