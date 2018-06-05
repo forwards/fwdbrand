@@ -16,11 +16,14 @@
 #' attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman")
 #' date <- structure(17532, class = "Date")
 #' workshop <- "Package development workshop"
-#' curriculum <- system.file("rmarkdown", "templates", "workshop_certificate", "resources", "default_workshop_contents.md", package = "branding")
+#' curriculum <- system.file("rmarkdown", "templates",
+#' "workshop_certificate", "resources",
+#' "default_workshop_contents.md", package = "branding")
 #' certifyer <- "Zaire Crooks"
 #' credentials <- "Forwards teaching team member"
 #' dir <- "certificates"
-#' create_workshop_certificates(date, workshop, curriculum, certifyer,
+#' create_workshop_certificates(date, workshop, curriculum,
+#'  certifyer,
 #' credentials,
 #' attendees,
 #' dir)
@@ -29,6 +32,10 @@ create_workshop_certificates <- function(date, workshop, curriculum, certifyer,
                                         credentials,
                                         attendees,
                                         dir){
+
+    if(!dir.exists(dir)){
+        dir.create(dir)
+    }
     file.copy(system.file("rmarkdown", "templates",
                           "workshop_certificate", "skeleton",
                           "skeleton.Rmd", package = "branding"),
@@ -37,9 +44,6 @@ create_workshop_certificates <- function(date, workshop, curriculum, certifyer,
                           "partly_transparent_forwards.png", package = "branding"),
               file.path(dir, "logo.png"))
 
-    if(!dir.exists(dir)){
-        dir.create(dir)
-    }
 
     purrr::walk2(attendees, 1:length(attendees),
                create_workshop_certificate,

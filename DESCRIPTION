@@ -1,6 +1,6 @@
 Package: branding
 Version: 0.0.0.9000
-Title: Distributes Forwards Branding Material.
+Title: Distributes Forwards Branding Material
 Description: Distributes Forwards branding material: logos, templates.
 Authors@R: c(person("Heather", "Turner", role = c("aut", "cre"),
                     email = "ht@heatherturner.net"),
@@ -15,6 +15,7 @@ RoxygenNote: 6.0.1
 Imports: 
     snakecase,
     purrr,
-    stringr
+    stringr,
+    rmarkdown
 Suggests: 
     testthat
