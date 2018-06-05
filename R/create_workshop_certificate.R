@@ -13,10 +13,7 @@
 #' @examples
 #' \dontrun{
 #' # Fake names generated via charlatan::ch_name
-#' attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman", "Gail Dietrich",
-#' "Mr. Hall Emard", "Kwame Tillman II", "Mrs. Vessie Gusikowski",
-#' "Burt Purdy", "Kendrick Mohr-Mann", "Stephany Cartwright", "Osvaldo Connelly"
-#' )
+#' attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman")
 #' date <- structure(17532, class = "Date")
 #' workshop <- "Package development workshop"
 #' curriculum <- system.file("rmarkdown", "templates", "workshop_certificate", "resources", "default_workshop_contents.md", package = "branding")
