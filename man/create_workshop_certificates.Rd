@@ -27,6 +27,7 @@ Create certificates for all attendees
 }
 \examples{
 \dontrun{
+# Fake names generated via charlatan::ch_name
 attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman", "Gail Dietrich",
 "Mr. Hall Emard", "Kwame Tillman II", "Mrs. Vessie Gusikowski",
 "Burt Purdy", "Kendrick Mohr-Mann", "Stephany Cartwright", "Osvaldo Connelly"

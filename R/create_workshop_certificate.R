@@ -12,6 +12,7 @@
 #'
 #' @examples
 #' \dontrun{
+#' # Fake names generated via charlatan::ch_name
 #' attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman", "Gail Dietrich",
 #' "Mr. Hall Emard", "Kwame Tillman II", "Mrs. Vessie Gusikowski",
 #' "Burt Purdy", "Kendrick Mohr-Mann", "Stephany Cartwright", "Osvaldo Connelly"
@@ -39,8 +40,16 @@ create_workshop_certificates <- function(date, workshop, curriculum, certifyer,
                           "partly_transparent_forwards.png", package = "branding"),
               file.path(dir, "logo.png"))
 
+    if(!dir.exists(dir)){
+        dir.create(dir)
+    }
+
     purrr::walk2(attendees, 1:length(attendees),
-               create_workshop_certificate)
+               create_workshop_certificate,
+               date, workshop,
+               curriculum, certifyer,
+               credentials,
+               dir)
 
    file.remove(file.path(dir, "skeleton.Rmd"))
    file.remove(file.path(dir, "logo.png"))
@@ -51,12 +60,13 @@ create_workshop_certificate <- function(attendee, number,
                                         curriculum, certifyer,
                                         credentials,
                                         dir){
-    rmarkdown::render(input = "skeleton.Rmd",
-                      output_file = snakecase::to_snake_case(paste(workshop,
-                                                                   stringr::str_pad(number, 2, pad = "0"), ".png")),
+    rmarkdown::render(input = file.path(dir, "skeleton.Rmd"),
+                      output_file = paste0(snakecase::to_snake_case(paste(workshop,
+                                                                   stringr::str_pad(number, 2, pad = "0"))),
+                                           ".pdf"),
                       output_dir = dir,
                       params = list(date = date,
-                                    worshop = workshop,
+                                    workshop = workshop,
                                     curriculum = curriculum,
                                     certifyer = certifyer,
                                     credentials = credentials,
