@@ -1,6 +1,13 @@
 ---
 title: "CERTIFICATE"
-output: pdf_document
+output: 
+  pdf_document:
+    latex_engine: xelatex
+header-includes:
+  - \usepackage{mathspec}
+  - \usepackage{fontspec}
+  - \usepackage[default,osfigures,scale=0.95]{opensans}
+  - \usepackage[T1]{fontenc}
 params:
   date: 
     label: Date of workshop
