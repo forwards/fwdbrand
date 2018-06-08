@@ -16,7 +16,8 @@ Imports:
     snakecase,
     purrr,
     stringr,
-    rmarkdown
+    rmarkdown,
+    lubridate
 Suggests: 
     testthat,
     covr
