@@ -1,6 +1,9 @@
 Forwards branding
 =================
 
+[![Travis build status](https://travis-ci.org/forwards/branding.svg?branch=master)](https://travis-ci.org/forwards/branding) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/forwards/branding?branch=master&svg=true)](https://ci.appveyor.com/project/forwards/branding)
+
+
 This repo contains files related to Forwards, the R foundation taskforce promoting diversity in the R community, branding.
 
 # Logo
