@@ -1,4 +1,14 @@
 
+# Install Pandoc
+# source: https://github.com/krlmlr/r-appveyor/issues/82#issuecomment-261695154
+before_test:
+  - ps: >-
+      if (-Not (Test-Path "C:\Program Files (x86)\Pandoc\")) {
+        cinst pandoc
+      }
+  - ps: $env:Path += ";C:\Program Files (x86)\Pandoc\"
+- pandoc -v
+
 environment:
   PATH: "%APPDATA%\\TinyTeX\\bin\\win32;%PATH%"
 
