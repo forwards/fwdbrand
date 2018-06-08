@@ -18,7 +18,7 @@
 #' workshop <- "Package development workshop"
 #' curriculum <- system.file("rmarkdown", "templates",
 #' "workshop_certificate", "resources",
-#' "default_workshop_contents.md", package = "branding")
+#' "default_workshop_contents.md", package = "fwdbrand")
 #' certifyer <- "Zaire Crooks"
 #' credentials <- "Forwards teaching team member"
 #' dir <- "certificates"
@@ -38,10 +38,10 @@ create_workshop_certificates <- function(date, workshop, curriculum, certifyer,
     }
     file.copy(system.file("rmarkdown", "templates",
                           "workshop_certificate", "skeleton",
-                          "skeleton.Rmd", package = "branding"),
+                          "skeleton.Rmd", package = "fwdbrand"),
               file.path(dir, "skeleton.Rmd"))
     file.copy(system.file("extdata", "assets",
-                          "partly_transparent_forwards.png", package = "branding"),
+                          "partly_transparent_forwards.png", package = "fwdbrand"),
               file.path(dir, "logo.png"))
 
 

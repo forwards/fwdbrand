@@ -33,7 +33,7 @@ date <- structure(17532, class = "Date")
 workshop <- "Package development workshop"
 curriculum <- system.file("rmarkdown", "templates",
 "workshop_certificate", "resources",
-"default_workshop_contents.md", package = "branding")
+"default_workshop_contents.md", package = "fwdbrand")
 certifyer <- "Zaire Crooks"
 credentials <- "Forwards teaching team member"
 dir <- "certificates"

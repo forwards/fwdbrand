@@ -1,4 +1,4 @@
 library(testthat)
-library(branding)
+library(fwdbrand)
 
-test_check("branding")
+test_check("fwdbrand")

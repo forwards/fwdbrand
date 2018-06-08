@@ -20,7 +20,7 @@ params:
     input: text
   curriculum:
     label: path to curriculum
-    value: !r system.file("rmarkdown", "templates", "workshop_certificate", "resources", "default_workshop_contents.md", package = "branding")
+    value: !r system.file("rmarkdown", "templates", "workshop_certificate", "resources", "default_workshop_contents.md", package = "fwdbrand")
     input: text
   certifyer:
     label: Certifying person full name
