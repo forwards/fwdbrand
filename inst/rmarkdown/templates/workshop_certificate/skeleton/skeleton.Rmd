@@ -22,7 +22,7 @@ params:
     label: path to curriculum
     value: !r system.file("rmarkdown", "templates", "workshop_certificate", "resources", "default_workshop_contents.md", package = "fwdbrand")
     input: text
-  certifyer:
+  certifier:
     label: Certifying person full name
     value: Heather Turner
   credentials:
@@ -68,7 +68,7 @@ Workshop contents:
 \vspace{1cm}
 
 ```{r, results = 'asis'}
-cat("##", params$certifyer, "\n")
+cat("##", params$certifier, "\n")
 ```
 
 ```{r, results = 'asis'}

@@ -6,10 +6,10 @@ test_that("create_workshop_certificates works", {
     date <- structure(17532, class = "Date")
     workshop <- "Package development workshop"
     curriculum <- system.file("rmarkdown", "templates", "workshop_certificate", "resources", "default_workshop_contents.md", package = "fwdbrand")
-    certifyer <- "Zaire Crooks"
+    certifier <- "Zaire Crooks"
     credentials <- "Forwards teaching team member"
     dir <- "certificates"
-    create_workshop_certificates(date, workshop, curriculum, certifyer,
+    create_workshop_certificates(date, workshop, curriculum, certifier,
                                  credentials,
                                  attendees,
                                  dir)

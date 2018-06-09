@@ -3,7 +3,7 @@
 #' @param date Date of the workshop, as a date.
 #' @param workshop Workshop title, character.
 #' @param curriculum Path to the workshop curriculum (.md), character.
-#' @param certifyer Person certifying, character.
+#' @param certifier Person certifying, character.
 #' @param credentials Credentials of the certifying person, character.
 #' @param attendees Names of attendees, character vector.
 #' @param dir Directory where to output the pdf certificates, character.
@@ -14,21 +14,21 @@
 #' \dontrun{
 #' # Fake names generated via charlatan::ch_name
 #' attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman")
-#' date <- structure(17532, class = "Date")
+#' date <- as.Date("2018-01-01")
 #' workshop <- "Package development workshop"
 #' curriculum <- system.file("rmarkdown", "templates",
 #' "workshop_certificate", "resources",
 #' "default_workshop_contents.md", package = "fwdbrand")
-#' certifyer <- "Zaire Crooks"
+#' certifier <- "Zaire Crooks"
 #' credentials <- "Forwards teaching team member"
 #' dir <- "certificates"
 #' create_workshop_certificates(date, workshop, curriculum,
-#'  certifyer,
+#'  certifier,
 #' credentials,
 #' attendees,
 #' dir)
 #' }
-create_workshop_certificates <- function(date, workshop, curriculum, certifyer,
+create_workshop_certificates <- function(date, workshop, curriculum, certifier,
                                         credentials,
                                         attendees,
                                         dir){
@@ -48,7 +48,7 @@ create_workshop_certificates <- function(date, workshop, curriculum, certifyer,
     purrr::walk2(attendees, 1:length(attendees),
                create_workshop_certificate,
                date, workshop,
-               curriculum, certifyer,
+               curriculum, certifier,
                credentials,
                dir)
 
@@ -58,7 +58,7 @@ create_workshop_certificates <- function(date, workshop, curriculum, certifyer,
 
 create_workshop_certificate <- function(attendee, number,
                                         date, workshop,
-                                        curriculum, certifyer,
+                                        curriculum, certifier,
                                         credentials,
                                         dir){
     rmarkdown::render(input = file.path(dir, "skeleton.Rmd"),
@@ -69,7 +69,7 @@ create_workshop_certificate <- function(attendee, number,
                       params = list(date = date,
                                     workshop = workshop,
                                     curriculum = curriculum,
-                                    certifyer = certifyer,
+                                    certifier = certifier,
                                     credentials = credentials,
                                     attendee = attendee))
 }

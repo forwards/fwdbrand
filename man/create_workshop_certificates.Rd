@@ -4,7 +4,7 @@
 \alias{create_workshop_certificates}
 \title{Create certificates for all attendees}
 \usage{
-create_workshop_certificates(date, workshop, curriculum, certifyer, credentials,
+create_workshop_certificates(date, workshop, curriculum, certifier, credentials,
   attendees, dir)
 }
 \arguments{
@@ -14,7 +14,7 @@ create_workshop_certificates(date, workshop, curriculum, certifyer, credentials,
 
 \item{curriculum}{Path to the workshop curriculum (.md), character.}
 
-\item{certifyer}{Person certifying, character.}
+\item{certifier}{Person certifying, character.}
 
 \item{credentials}{Credentials of the certifying person, character.}
 
@@ -29,16 +29,16 @@ Create certificates for all attendees
 \dontrun{
 # Fake names generated via charlatan::ch_name
 attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman")
-date <- structure(17532, class = "Date")
+date <- as.Date("2018-01-01")
 workshop <- "Package development workshop"
 curriculum <- system.file("rmarkdown", "templates",
 "workshop_certificate", "resources",
 "default_workshop_contents.md", package = "fwdbrand")
-certifyer <- "Zaire Crooks"
+certifier <- "Zaire Crooks"
 credentials <- "Forwards teaching team member"
 dir <- "certificates"
 create_workshop_certificates(date, workshop, curriculum,
- certifyer,
+ certifier,
 credentials,
 attendees,
 dir)
