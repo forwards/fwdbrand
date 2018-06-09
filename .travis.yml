@@ -4,5 +4,10 @@ language: R
 sudo: false
 cache: packages
 
+before_install:
+  - tlmgr install opensans
+  - tlmgr install wallpaper
+  - tlmgr install eso-pic
+
 after_success:
     - Rscript -e 'covr::codecov()'

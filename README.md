@@ -4,7 +4,14 @@ Forwards branding
 [![Travis build status](https://travis-ci.org/forwards/fwdbrand.svg?branch=master)](https://travis-ci.org/forwards/fwdbrand) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/forwards/fwdbrand?branch=master&svg=true)](https://ci.appveyor.com/project/maelle/fwdbrand) [![Coverage status](https://codecov.io/gh/forwards/fwdbrand/branch/master/graph/badge.svg)](https://codecov.io/github/forwards/fwdbrand?branch=master)
 
 
-This repo contains files related to Forwards, the R foundation taskforce promoting diversity in the R community, branding.
+This repo contains material related to Forwards (the R foundation taskforce promoting diversity in the R community) branding, organized as an R package for easier distribution and use.
+
+# Installation
+
+```r
+# install.packages("devtools")
+devtools::install_github("forwards/fwdbrand")
+```
 
 # Logo
 
