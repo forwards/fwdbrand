@@ -28,6 +28,7 @@ metafont
 mfware
 natbib
 oberdiek
+slantsc
 titling
 tools
 upquote
