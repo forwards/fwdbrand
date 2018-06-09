@@ -37,3 +37,4 @@ xkeyval
 xetex
 zapfding
 opensans
+eso-pic
