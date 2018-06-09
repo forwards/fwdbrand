@@ -17,7 +17,7 @@ powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.Security
 powershell -Command "(gc texlive.profile) -replace './', './TinyTex/' | Out-File -encoding ASCII texlive.profile"
 
 rem download the custom package list
-powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest https://github.com/yihui/tinytex/raw/master/tools/pkgs-custom.txt -OutFile pkgs-custom.txt"
+powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest https://github.com/forwards/fwdbrand/raw/master/tools/pkgs-custom.txt -OutFile pkgs-custom.txt"
 
 rem an automated installation of TeXLive (infrastructure only)
 cd install-tl-*

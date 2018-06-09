@@ -23,14 +23,8 @@ init:
         Import-Module '..\appveyor-tool.ps1'
 
 install:
-  # https://github.com/holgern/TUB_PhDThesisTemplate/blob/f1f36a42437966ea7037ac1496224f08d42308c0/appveyor.yml#L17
-  # autoinstall latex packages (0=no, 1=autoinstall, 2=ask)
-  # this adds this to the registry!
-  - initexmf --set-config-value "[MPM]AutoInstall=1"
-  - mpm --install=cm-super
-  - mpm --update-db
-  - mpm --update=fontspec
-  - initexmf --update-fndb
+  ps: Bootstrap
+
 
 cache:
   - C:\RLibrary
