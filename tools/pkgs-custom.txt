@@ -33,5 +33,6 @@ tools
 upquote
 url
 xkeyval
+xetex
 zapfding
 opensans
