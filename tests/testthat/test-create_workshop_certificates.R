@@ -1,6 +1,7 @@
 context("test-create_workshop_certificates.R")
 
 test_that("create_workshop_certificates works", {
+    skip_on_cran()
     attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman")
     date <- structure(17532, class = "Date")
     workshop <- "Package development workshop"
