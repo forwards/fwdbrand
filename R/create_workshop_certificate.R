@@ -32,7 +32,7 @@
 create_workshop_certificates <- function(date, workshop, curriculum, certifier,
                                         credentials,
                                         attendees,
-                                        dir, keep_tex){
+                                        dir, keep_tex = FALSE){
 
     if(!dir.exists(dir)){
         dir.create(dir)

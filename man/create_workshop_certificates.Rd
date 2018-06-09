@@ -5,7 +5,7 @@
 \title{Create certificates for all attendees}
 \usage{
 create_workshop_certificates(date, workshop, curriculum, certifier, credentials,
-  attendees, dir, keep_tex)
+  attendees, dir, keep_tex = FALSE)
 }
 \arguments{
 \item{date}{Date of the workshop, as a date.}
