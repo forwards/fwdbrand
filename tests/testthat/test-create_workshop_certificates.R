@@ -18,4 +18,15 @@ test_that("create_workshop_certificates works", {
     expect_true(file.exists(file.path(dir,
                                       "package_development_workshop_02.pdf")))
     unlink(dir, recursive = TRUE)
+
+    dir <- "certificates"
+    create_workshop_certificates(date, workshop, curriculum, certifier,
+                                 credentials,
+                                 attendees,
+                                 dir, keep_tex = TRUE)
+    expect_true(file.exists(file.path(dir,
+                                      "package_development_workshop_01.tex")))
+    expect_true(file.exists(file.path(dir,
+                                      "package_development_workshop_02.tex")))
+    unlink(dir, recursive = TRUE)
 })

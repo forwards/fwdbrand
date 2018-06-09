@@ -7,6 +7,7 @@
 #' @param credentials Credentials of the certifying person, character.
 #' @param attendees Names of attendees, character vector.
 #' @param dir Directory where to output the pdf certificates, character.
+#' @param keep_tex Logical argument passed to rmarkdown::render
 #'
 #' @export
 #'
@@ -31,7 +32,7 @@
 create_workshop_certificates <- function(date, workshop, curriculum, certifier,
                                         credentials,
                                         attendees,
-                                        dir){
+                                        dir, keep_tex){
 
     if(!dir.exists(dir)){
         dir.create(dir)
@@ -50,7 +51,7 @@ create_workshop_certificates <- function(date, workshop, curriculum, certifier,
                date, workshop,
                curriculum, certifier,
                credentials,
-               dir)
+               dir, keep_tex)
 
    file.remove(file.path(dir, "skeleton.Rmd"))
    file.remove(file.path(dir, "logo.png"))
@@ -60,7 +61,7 @@ create_workshop_certificate <- function(attendee, number,
                                         date, workshop,
                                         curriculum, certifier,
                                         credentials,
-                                        dir){
+                                        dir, keep_tex){
     rmarkdown::render(input = file.path(dir, "skeleton.Rmd"),
                       output_file = paste0(snakecase::to_snake_case(paste(workshop,
                                                                    stringr::str_pad(number, 2, pad = "0"))),
@@ -71,5 +72,6 @@ create_workshop_certificate <- function(attendee, number,
                                     curriculum = curriculum,
                                     certifier = certifier,
                                     credentials = credentials,
-                                    attendee = attendee))
+                                    attendee = attendee),
+                      output_options = list(keep_tex = keep_tex))
 }

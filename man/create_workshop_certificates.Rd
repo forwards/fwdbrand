@@ -5,7 +5,7 @@
 \title{Create certificates for all attendees}
 \usage{
 create_workshop_certificates(date, workshop, curriculum, certifier, credentials,
-  attendees, dir)
+  attendees, dir, keep_tex)
 }
 \arguments{
 \item{date}{Date of the workshop, as a date.}
@@ -21,6 +21,8 @@ create_workshop_certificates(date, workshop, curriculum, certifier, credentials,
 \item{attendees}{Names of attendees, character vector.}
 
 \item{dir}{Directory where to output the pdf certificates, character.}
+
+\item{keep_tex}{Logical argument passed to rmarkdown::render}
 }
 \description{
 Create certificates for all attendees

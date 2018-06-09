@@ -3,6 +3,7 @@ title: "CERTIFICATE"
 output: 
   pdf_document:
     latex_engine: xelatex
+    keep_tex: false
 header-includes:
   - \usepackage{mathspec}
   - \usepackage{fontspec}
