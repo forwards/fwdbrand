@@ -1,9 +1,10 @@
 # make hex sticker
 library("magrittr")
-logo_path <- "assets/forwards.png"
+logo_path <- "inst/extdata/assets/forwards.png"
+temp <- tempfile(fileext = ".png")
 # first step, hex sticker with wrong border
 hexSticker::sticker(logo_path, package="",
-                    filename="temp.png",
+                    filename = temp,
                     h_fill = "white",
                     h_color = "green",
                     s_width = 0.7,
@@ -12,10 +13,10 @@ hexSticker::sticker(logo_path, package="",
                     s_x = 1, s_y = 1)
 
 # now make border transparent
-height <- magick::image_info(magick::image_read("temp.png"))$height
-width <- magick::image_info(magick::image_read("temp.png"))$width
+height <- magick::image_info(magick::image_read(temp))$height
+width <- magick::image_info(magick::image_read(temp))$width
 img <- magick::image_blank(width, height, "white") %>%
-    magick::image_composite(magick::image_read("temp.png")) %>%
+    magick::image_composite(magick::image_read(temp)) %>%
     magick::image_transparent(color = "#00FF00", fuzz = 1)
 
 # blank gradient image for the background
@@ -30,4 +31,5 @@ dev.off()
 
 magick::image_composite(fig, img) %>%
     magick::image_transparent("white") %>%
-    magick::image_write("assets/forwards_hex.png")
+    magick::image_write("inst/extdata/assets/forwards_hex.png")
+file.remove(temp)
