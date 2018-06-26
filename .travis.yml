@@ -11,6 +11,7 @@ before_install:
   - tlmgr install slantsc
   - tlmgr install fancyhdr
   - tlmgr install hyperref
+  - tlmgr install newunicodechar
 
 after_success:
     - Rscript -e 'covr::codecov()'

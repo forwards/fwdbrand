@@ -39,3 +39,4 @@ zapfding
 opensans
 eso-pic
 fancyhdr
+newunicodechar
