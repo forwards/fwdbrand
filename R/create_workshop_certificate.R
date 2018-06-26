@@ -41,6 +41,10 @@ create_workshop_certificates <- function(date, workshop, curriculum, certifier,
                           "workshop_certificate", "skeleton",
                           "skeleton.Rmd", package = "fwdbrand"),
               file.path(dir, "skeleton.Rmd"))
+    file.copy(system.file("rmarkdown", "templates",
+                          "workshop_certificate", "skeleton",
+                          "file.tex", package = "fwdbrand"),
+              file.path(dir, "file.tex"))
     file.copy(system.file("extdata", "assets",
                           "partly_transparent_forwards.png", package = "fwdbrand"),
               file.path(dir, "logo.png"))
@@ -54,6 +58,7 @@ create_workshop_certificates <- function(date, workshop, curriculum, certifier,
                dir, keep_tex)
 
    file.remove(file.path(dir, "skeleton.Rmd"))
+   file.remove(file.path(dir, "file.tex"))
    file.remove(file.path(dir, "logo.png"))
 }
 

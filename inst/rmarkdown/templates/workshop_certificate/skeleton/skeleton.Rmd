@@ -1,21 +1,11 @@
 ---
 title: "CERTIFICATE OF ATTENDANCE"
-header-includes:
-  - \usepackage{mathspec}
-  - \usepackage{fontspec}
-  - \usepackage[default,osfigures,scale=0.95]{opensans}
-  - \usepackage[T1]{fontenc}
-  - \usepackage{wallpaper}
-  - \usepackage{fancyhdr}
-  - \usepackage{hyperref}
-  - \usepackage{newunicodechar}
-  - \newunicodechar{ }{~}
-  - \pagestyle{fancy}
-  - \fancyfoot[CO,CE]{Forwards, the R Foundation taskforce on women and other under-represented groups.}
-output: 
-  pdf_document:
-    latex_engine: xelatex
-    keep_tex: false
+output:
+    pdf_document: 
+        includes: 
+            in_header: file.tex
+        latex_engine: xelatex
+        keep_tex: false
 params:
   date: 
     label: Date of workshop
