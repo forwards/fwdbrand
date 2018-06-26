@@ -62,6 +62,7 @@ create_workshop_certificates <- function(date, workshop, curriculum, certifier,
    file.remove(file.path(dir, "logo.png"))
 }
 
+# https://tex.stackexchange.com/questions/346730/fancyhdr-package-not-working
 create_workshop_certificate <- function(attendee, number,
                                         date, workshop,
                                         curriculum, certifier,
