@@ -38,3 +38,4 @@ xetex
 zapfding
 opensans
 eso-pic
+fancyhdr

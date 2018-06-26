@@ -9,6 +9,8 @@ before_install:
   - tlmgr install wallpaper
   - tlmgr install eso-pic
   - tlmgr install slantsc
+  - tlmgr install fancyhdr
+  - tlmgr install hyperref
 
 after_success:
     - Rscript -e 'covr::codecov()'
