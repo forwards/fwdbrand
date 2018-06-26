@@ -10,6 +10,10 @@ header-includes:
   - \usepackage[default,osfigures,scale=0.95]{opensans}
   - \usepackage[T1]{fontenc}
   - \usepackage{wallpaper}
+  - \usepackage{fancyhdr}
+  - \usepackage{hyperref}
+  - \pagestyle{fancy}
+  - \fancyfoot[CO,CE]{Forwards, the R Foundation taskforce on women and other under-represented groups.}
 params:
   date: 
     label: Date of workshop
@@ -76,4 +80,4 @@ cat("##", params$certifier, "\n")
 cat("###", params$credentials, "\n")
 ```
 
-Forwards: the R Foundation taskforce on women and other under-represented groups [https://forwards.github.io/](https://forwards.github.io/).
+
