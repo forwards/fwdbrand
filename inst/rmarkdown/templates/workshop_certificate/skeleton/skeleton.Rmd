@@ -1,9 +1,5 @@
 ---
-title: "CERTIFICATE"
-output: 
-  pdf_document:
-    latex_engine: xelatex
-    keep_tex: false
+title: "CERTIFICATE OF ATTENDANCE"
 header-includes:
   - \usepackage{mathspec}
   - \usepackage{fontspec}
@@ -13,7 +9,11 @@ header-includes:
   - \usepackage{fancyhdr}
   - \usepackage{hyperref}
   - \pagestyle{fancy}
-  - \fancyfoot[CO,CE]{Forwards, the R Foundation taskforce on women and other under-represented groups.}
+  - \fancyfoot[CO, CE]{Forwards, the R Foundation taskforce on women and other under-represented groups.}
+output: 
+  pdf_document:
+    latex_engine: xelatex
+    keep_tex: false
 params:
   date: 
     label: Date of workshop
@@ -39,7 +39,6 @@ params:
     value: Maëlle Salmon
     input: text
 ---
-
 \CenterWallPaper{1}{logo.png}
 
 ```{r setup, include=FALSE}
