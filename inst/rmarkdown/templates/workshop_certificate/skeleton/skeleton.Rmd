@@ -13,7 +13,7 @@ params:
     input: date
   location:
     label: Location of workshop
-    value: Université de Lorraine
+    value: University of Lorraine
     input: text
   workshop:
     label: Workshop title

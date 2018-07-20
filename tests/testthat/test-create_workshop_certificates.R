@@ -4,7 +4,7 @@ test_that("create_workshop_certificates works", {
     skip_on_cran()
     attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman")
     date <- structure(17532, class = "Date")
-    location <- "University of Lorraine"
+    location <- "University of Barcelona"
     workshop <- "Package development workshop"
     curriculum <- system.file("rmarkdown", "templates", "workshop_certificate", "resources", "default_workshop_contents.md", package = "fwdbrand")
     certifier <- "Zaire Crooks"

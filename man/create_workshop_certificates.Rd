@@ -34,7 +34,7 @@ Create certificates for all attendees
 # Fake names generated via charlatan::ch_name
 attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman")
 date <- as.Date("2018-01-01")
-location <- "UniversitÃ© de Lorraine"
+location <- "University of Lorraine"
 workshop <- "Package development workshop"
 curriculum <- system.file("rmarkdown", "templates",
 "workshop_certificate", "resources",

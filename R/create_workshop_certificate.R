@@ -54,7 +54,7 @@ create_workshop_certificates <- function(date, location, workshop, curriculum, c
 
     purrr::walk2(attendees, 1:length(attendees),
                create_workshop_certificate,
-               date, workshop,
+               date, location, workshop,
                curriculum, certifier,
                credentials,
                dir, keep_tex)
@@ -66,7 +66,7 @@ create_workshop_certificates <- function(date, location, workshop, curriculum, c
 
 # https://tex.stackexchange.com/questions/346730/fancyhdr-package-not-working
 create_workshop_certificate <- function(attendee, number,
-                                        date, workshop,
+                                        date, location, workshop,
                                         curriculum, certifier,
                                         credentials,
                                         dir, keep_tex){
@@ -76,6 +76,7 @@ create_workshop_certificate <- function(attendee, number,
                                            ".pdf"),
                       output_dir = dir,
                       params = list(date = date,
+                                    location = location,
                                     workshop = workshop,
                                     curriculum = curriculum,
                                     certifier = certifier,
