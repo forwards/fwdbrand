@@ -1,6 +1,7 @@
 #' Create certificates for all attendees
 #'
 #' @param date Date of the workshop, as a date.
+#' @param location Location of the workshop, character.
 #' @param workshop Workshop title, character.
 #' @param curriculum Path to the workshop curriculum (.md), character.
 #' @param certifier Person certifying, character.
@@ -16,6 +17,7 @@
 #' # Fake names generated via charlatan::ch_name
 #' attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman")
 #' date <- as.Date("2018-01-01")
+#' location <- "University of Lorraine"
 #' workshop <- "Package development workshop"
 #' curriculum <- system.file("rmarkdown", "templates",
 #' "workshop_certificate", "resources",
@@ -23,13 +25,13 @@
 #' certifier <- "Zaire Crooks"
 #' credentials <- "Forwards teaching team member"
 #' dir <- "certificates"
-#' create_workshop_certificates(date, workshop, curriculum,
+#' create_workshop_certificates(date, location, workshop, curriculum,
 #'  certifier,
 #' credentials,
 #' attendees,
 #' dir)
 #' }
-create_workshop_certificates <- function(date, workshop, curriculum, certifier,
+create_workshop_certificates <- function(date, location, workshop, curriculum, certifier,
                                         credentials,
                                         attendees,
                                         dir, keep_tex = FALSE){

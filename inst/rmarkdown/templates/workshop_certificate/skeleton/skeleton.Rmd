@@ -11,6 +11,10 @@ params:
     label: Date of workshop
     value: !r lubridate::today() 
     input: date
+  location:
+    label: Location of workshop
+    value: Université de Lorraine
+    input: text
   workshop:
     label: Workshop title
     value: R Package Development Workshop
@@ -63,7 +67,7 @@ cat(as.character(params$workshop), "\n")
 
 \large \textbf{
 ```{r, results = 'asis'}
-cat(as.character(params$date), "\n")
+cat(as.character(params$date), ", ", params$location, "\n")
 ```
 }
 

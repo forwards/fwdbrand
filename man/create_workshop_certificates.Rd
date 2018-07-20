@@ -4,11 +4,13 @@
 \alias{create_workshop_certificates}
 \title{Create certificates for all attendees}
 \usage{
-create_workshop_certificates(date, workshop, curriculum, certifier, credentials,
-  attendees, dir, keep_tex = FALSE)
+create_workshop_certificates(date, location, workshop, curriculum, certifier,
+  credentials, attendees, dir, keep_tex = FALSE)
 }
 \arguments{
 \item{date}{Date of the workshop, as a date.}
+
+\item{location}{Location of the workshop, character.}
 
 \item{workshop}{Workshop title, character.}
 
@@ -32,6 +34,7 @@ Create certificates for all attendees
 # Fake names generated via charlatan::ch_name
 attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman")
 date <- as.Date("2018-01-01")
+location <- "UniversitÃ© de Lorraine"
 workshop <- "Package development workshop"
 curriculum <- system.file("rmarkdown", "templates",
 "workshop_certificate", "resources",
@@ -39,7 +42,7 @@ curriculum <- system.file("rmarkdown", "templates",
 certifier <- "Zaire Crooks"
 credentials <- "Forwards teaching team member"
 dir <- "certificates"
-create_workshop_certificates(date, workshop, curriculum,
+create_workshop_certificates(date, location, workshop, curriculum,
  certifier,
 credentials,
 attendees,

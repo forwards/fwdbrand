@@ -4,12 +4,14 @@ test_that("create_workshop_certificates works", {
     skip_on_cran()
     attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman")
     date <- structure(17532, class = "Date")
+    location <- "University of Lorraine"
     workshop <- "Package development workshop"
     curriculum <- system.file("rmarkdown", "templates", "workshop_certificate", "resources", "default_workshop_contents.md", package = "fwdbrand")
     certifier <- "Zaire Crooks"
     credentials <- "Forwards teaching team member"
     dir <- "certificates"
-    create_workshop_certificates(date, workshop, curriculum, certifier,
+    create_workshop_certificates(date, location,
+                                 workshop, curriculum, certifier,
                                  credentials,
                                  attendees,
                                  dir)
@@ -20,7 +22,7 @@ test_that("create_workshop_certificates works", {
     unlink(dir, recursive = TRUE)
 
     dir <- "certificates"
-    create_workshop_certificates(date, workshop, curriculum, certifier,
+    create_workshop_certificates(date, location, workshop, curriculum, certifier,
                                  credentials,
                                  attendees,
                                  dir, keep_tex = TRUE)
