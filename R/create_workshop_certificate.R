@@ -46,7 +46,7 @@ create_workshop_certificates <- function(date, workshop, curriculum, certifier,
                           "file.tex", package = "fwdbrand"),
               file.path(dir, "file.tex"))
     file.copy(system.file("extdata", "assets",
-                          "partly_transparent_forwards.png", package = "fwdbrand"),
+                          "partly_transparent_forwards_borders.png", package = "fwdbrand"),
               file.path(dir, "logo.png"))
 
 

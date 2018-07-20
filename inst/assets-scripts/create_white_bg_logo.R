@@ -11,5 +11,11 @@ magick::image_blank(height, height, color = "white") %>%
 
 bitmap <- logo[[1]]
 bitmap[4,,] <- as.raw(as.integer(bitmap[4,,]) * 0.4)
-magick::image_read(bitmap) %>%
+newlogo <- magick::image_read(bitmap)
+newlogo %>%
     magick::image_write("inst/extdata/assets/partly_transparent_forwards.png")
+
+magick::image_border(newlogo, "none", "100x100") %>%
+    magick::image_write("inst/extdata/assets/partly_transparent_forwards_borders.png")
+
+
