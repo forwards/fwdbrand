@@ -20,4 +20,5 @@ Imports:
     lubridate
 Suggests: 
     testthat,
-    covr
+    covr,
+    pdftools

@@ -19,6 +19,17 @@ test_that("create_workshop_certificates works", {
                                       "package_development_workshop_01.pdf")))
     expect_true(file.exists(file.path(dir,
                                       "package_development_workshop_02.pdf")))
+
+    text <- pdftools::pdf_text(file.path(dir,
+                                         "package_development_workshop_01.pdf"))
+    expect_true(grepl("Zaire Crooks", text))
+    expect_true(grepl("CERTIFICATE OF ATTENDANCE", text))
+    expect_true(grepl("University of Barcelona", text))
+    expect_true(grepl("Marnie Dickinson", text))
+    expect_true(grepl("2018-01-01", text))
+    expect_true(grepl("Package development workshop", text))
+    expect_true(grepl("Collaborative", text))
+    expect_true(grepl("forwards\\.github\\.io", text))
     unlink(dir, recursive = TRUE)
 
     dir <- "certificates"

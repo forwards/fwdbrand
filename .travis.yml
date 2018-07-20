@@ -13,5 +13,13 @@ before_install:
   - tlmgr install hyperref
   - tlmgr install geometry
 
+addons:
+  apt:
+    packages:
+      - libwebp-dev
+      - libpoppler-cpp-dev
+      - poppler-data
+      - valgrind
+
 after_success:
     - Rscript -e 'covr::codecov()'
