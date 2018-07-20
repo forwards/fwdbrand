@@ -6,6 +6,7 @@ output:
             in_header: file.tex
         latex_engine: xelatex
         keep_tex: false
+fontsize: 12pt
 params:
   date: 
     label: Date of workshop
@@ -35,7 +36,7 @@ params:
     value: Maëlle Salmon
     input: text
 ---
-\fontsize{16}{22}
+
 \CenterWallPaper{1}{logo.png}
 
 ```{r setup, include=FALSE}
@@ -70,7 +71,7 @@ cat(as.character(params$workshop), "\n")
 cat(as.character(params$date), ", ", params$location, "\n")
 ```
 }
-
+\vspace{1cm}
 \Large \textbf{
 Workshop contents:}
 \end{center}
