@@ -8,6 +8,8 @@
 #' @param credentials Credentials of the certifying person, character.
 #' @param attendees Names of attendees, character vector.
 #' @param dir Directory where to output the pdf certificates, character.
+#' @param papersize Option for LaTeX article class specifying paper size, e.g.
+#' `"a4paper"`, `"letterpaper"`.
 #' @param keep_tex Logical argument passed to rmarkdown::render
 #'
 #' @export
@@ -31,10 +33,10 @@
 #' attendees,
 #' dir)
 #' }
-create_workshop_certificates <- function(date, location, workshop, curriculum, certifier,
-                                        credentials,
-                                        attendees,
-                                        dir, keep_tex = FALSE){
+create_workshop_certificates <- function(date, location, workshop, curriculum,
+                                         certifier, credentials, attendees,
+                                         dir, papersize = "a4paper",
+                                         keep_tex = FALSE){
 
     if(!dir.exists(dir)){
         dir.create(dir)
@@ -53,11 +55,11 @@ create_workshop_certificates <- function(date, location, workshop, curriculum, c
 
 
     purrr::walk2(attendees, 1:length(attendees),
-               create_workshop_certificate,
-               date, location, workshop,
-               curriculum, certifier,
-               credentials,
-               dir, keep_tex)
+                 create_workshop_certificate,
+                 date, location, workshop,
+                 curriculum, certifier,
+                 credentials,
+                 dir, papersize, keep_tex)
 
    file.remove(file.path(dir, "skeleton.Rmd"))
    file.remove(file.path(dir, "file.tex"))
@@ -69,13 +71,14 @@ create_workshop_certificate <- function(attendee, number,
                                         date, location, workshop,
                                         curriculum, certifier,
                                         credentials,
-                                        dir, keep_tex){
+                                        dir, papersize, keep_tex){
     rmarkdown::render(input = file.path(dir, "skeleton.Rmd"),
                       output_file = paste0(snakecase::to_snake_case(paste(workshop,
                                                                    stringr::str_pad(number, 2, pad = "0"))),
                                            ".pdf"),
                       output_dir = dir,
-                      params = list(date = date,
+                      params = list(papersize = papersize,
+                                    date = date,
                                     location = location,
                                     workshop = workshop,
                                     curriculum = curriculum,

@@ -9,6 +9,10 @@ output:
 documentclass: extarticle        
 fontsize: 14pt
 params:
+  papersize:
+    label: Paper size of output PDF
+    value: a4paper
+    input: text    
   date: 
     label: Date of workshop
     value: !r lubridate::today() 
@@ -36,6 +40,10 @@ params:
     label: Attendee
     value: Maëlle Salmon
     input: text
+---
+
+---
+classoption: "`r params$papersize`"
 ---
 
 \CenterWallPaper{1}{logo.png}
