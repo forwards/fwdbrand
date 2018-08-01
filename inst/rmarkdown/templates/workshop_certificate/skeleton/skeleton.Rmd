@@ -6,7 +6,8 @@ output:
             in_header: file.tex
         latex_engine: xelatex
         keep_tex: false
-fontsize: 12pt
+documentclass: extarticle        
+fontsize: 14pt
 params:
   date: 
     label: Date of workshop
