@@ -6,6 +6,21 @@
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{varwidth}
+\usepackage{tcolorbox}
+\usepackage{background}
+\definecolor{bordercol}{HTML}{471177}
+\backgroundsetup{contents={
+  \begin{tcolorbox}[
+    standard jigsaw,        % box type
+    opacityback=0,          % transparent background so watermark is seen
+    colframe=bordercol,     % custom xcolor (grey alternative: black!50!white)
+    outer arc=0mm, arc=0mm, % square corners
+    boxrule=8pt,            % border thickness
+    add to width = 1in]     % 1in wider than \textwidth
+    \vspace{\textheight}    % make as tall as body (inc. header and footer)
+    \vspace{1in}            % ...plus 1in
+  \end{tcolorbox}
+}, angle=0, scale=1} % background fills page
 \fancypagestyle{plain}{%  the preset of fancyhdr
   \fancyhf{}
   \renewcommand{\headrulewidth}{0pt}
