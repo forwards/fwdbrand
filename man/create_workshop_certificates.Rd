@@ -5,7 +5,7 @@
 \title{Create certificates for all attendees}
 \usage{
 create_workshop_certificates(date, location, workshop, curriculum,
-  certifier, credentials, attendees, dir, papersize = "a4paper",
+  certifier, credentials, attendees, dir = ".", papersize = "a4paper",
   keep_tex = FALSE)
 }
 \arguments{
