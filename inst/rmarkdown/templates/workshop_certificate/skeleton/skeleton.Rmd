@@ -1,14 +1,12 @@
 ---
 title: "CERTIFICATE OF ATTENDANCE"
-output:
+output: 
     pdf_document: 
         latex_engine: xelatex
-        includes: 
-          in_header: file.tex
+        template: template.tex
         keep_tex: true
 documentclass: extarticle        
 fontsize: 14pt
-geometry: margin=1in, includeheadfoot, headsep=0in, headheight=0in, footskip = 14pt
 params:
   papersize:
     label: Paper size of output PDF
@@ -46,8 +44,6 @@ params:
 ---
 classoption: "`r params$papersize`"
 ---
-
-\CenterWallPaper{1}{logo.png}
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,

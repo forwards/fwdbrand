@@ -35,23 +35,24 @@
 #' }
 create_workshop_certificates <- function(date, location, workshop, curriculum,
                                          certifier, credentials, attendees,
-                                         dir, papersize = "a4paper",
+                                         dir = ".", papersize = "a4paper",
                                          keep_tex = FALSE){
 
     if(!dir.exists(dir)){
         dir.create(dir)
     }
-    file.copy(system.file("rmarkdown", "templates",
-                          "workshop_certificate", "skeleton",
-                          "skeleton.Rmd", package = "fwdbrand"),
-              file.path(dir, "skeleton.Rmd"))
-    file.copy(system.file("rmarkdown", "templates",
-                          "workshop_certificate", "skeleton",
-                          "file.tex", package = "fwdbrand"),
-              file.path(dir, "file.tex"))
-    file.copy(system.file("extdata", "assets",
-                          "partly_transparent_forwards_borders.png", package = "fwdbrand"),
-              file.path(dir, "logo.png"))
+
+    temp_rmd <- copy_skeleton_file("skeleton.Rmd", dir)
+    on.exit(file.remove(temp_rmd))
+
+    temp_template <- copy_skeleton_file("template.tex", dir)
+    on.exit(file.remove(temp_template))
+
+    temp_logo <- copy_asset_file("partly_transparent_forwards.png", dir)
+    on.exit(file.remove(temp_logo))
+
+    temp_border <- copy_asset_file("magma_border.pdf", dir)
+    on.exit(file.remove(temp_border))
 
 
     purrr::walk2(attendees, 1:length(attendees),
@@ -60,10 +61,6 @@ create_workshop_certificates <- function(date, location, workshop, curriculum,
                  curriculum, certifier,
                  credentials,
                  dir, papersize, keep_tex)
-
-   file.remove(file.path(dir, "skeleton.Rmd"))
-   file.remove(file.path(dir, "file.tex"))
-   file.remove(file.path(dir, "logo.png"))
 }
 
 # https://tex.stackexchange.com/questions/346730/fancyhdr-package-not-working
@@ -71,11 +68,12 @@ create_workshop_certificate <- function(attendee, number,
                                         date, location, workshop,
                                         curriculum, certifier,
                                         credentials,
-                                        dir, papersize, keep_tex){
+                                        dir = ".", papersize = "a4paper",
+                                        keep_tex = FALSE){
+    i <- stringr::str_pad(number, 2, pad = "0")
+    output_file <- paste0(snakecase::to_snake_case(paste(workshop, i)), ".pdf")
     rmarkdown::render(input = file.path(dir, "skeleton.Rmd"),
-                      output_file = paste0(snakecase::to_snake_case(paste(workshop,
-                                                                   stringr::str_pad(number, 2, pad = "0"))),
-                                           ".pdf"),
+                      output_file = output_file,
                       output_dir = dir,
                       params = list(papersize = papersize,
                                     date = date,
@@ -86,4 +84,22 @@ create_workshop_certificate <- function(attendee, number,
                                     credentials = credentials,
                                     attendee = attendee),
                       output_options = list(keep_tex = keep_tex))
+}
+
+copy_fwdbrand_file <- function(file, new_dir, old_dir){
+    new_path <- file.path(new_dir, file)
+    file.copy(system.file(old_dir, file, package = "fwdbrand"),
+              new_path)
+    new_path
+}
+
+copy_skeleton_file <- function(file, new_dir){
+    copy_fwdbrand_file(file, new_dir,
+                       file.path("rmarkdown", "templates",
+                                 "workshop_certificate", "skeleton"))
+}
+
+copy_asset_file <- function(file, new_dir){
+    copy_fwdbrand_file(file, new_dir,
+                       file.path("extdata", "assets"))
 }
