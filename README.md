@@ -55,7 +55,7 @@ create_workshop_certificates(date, location,
                              dir)
 ```
 
-[Example certificate]("certificates/package_development_workshop_01.pdf").
+[Example certificate](certificates/package_development_workshop_01.pdf).
 
 ## Legalese
 
