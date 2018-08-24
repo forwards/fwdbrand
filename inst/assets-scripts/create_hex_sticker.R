@@ -1,5 +1,8 @@
 # make hex sticker
 library("magrittr")
+magick::image_read_svg("inst/extdata/assets/forwards.svg",
+                       width = 5000, height = 5000) %>%
+    magick::image_write("inst/extdata/assets/forwards.png")
 logo_path <- "inst/extdata/assets/forwards.png"
 temp <- tempfile(fileext = ".png")
 # first step, hex sticker with wrong border
