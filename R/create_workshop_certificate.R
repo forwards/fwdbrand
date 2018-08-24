@@ -46,13 +46,13 @@ create_workshop_certificates <- function(date, location, workshop, curriculum,
     on.exit(file.remove(temp_rmd))
 
     temp_template <- copy_skeleton_file("template.tex", dir)
-    on.exit(file.remove(temp_template))
+    on.exit(file.remove(temp_template), add = TRUE)
 
     temp_logo <- copy_asset_file("partly_transparent_forwards.png", dir)
-    on.exit(file.remove(temp_logo))
+    on.exit(file.remove(temp_logo), add = TRUE)
 
     temp_border <- copy_asset_file("magma_border.pdf", dir)
-    on.exit(file.remove(temp_border))
+    on.exit(file.remove(temp_border), add = TRUE)
 
 
     purrr::walk2(attendees, 1:length(attendees),
