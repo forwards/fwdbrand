@@ -4,5 +4,6 @@
 ^\.Rproj\.user$
 ^\.travis\.yml$
 ^appveyor\.yml$
+^certificates$
 ^tools$
 ^codecov\.yml$

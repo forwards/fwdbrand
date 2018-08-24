@@ -42,18 +42,20 @@ date <- as.Date("2018-01-01")
 location <- "University of Lorraine"
 workshop <- "Package development workshop"
 curriculum <- system.file("rmarkdown", "templates",
-"workshop_certificate", "resources",
-"default_workshop_contents.md", package = "fwdbrand")
+                          "workshop_certificate", "resources",
+                          "default_workshop_contents.md", package = "fwdbrand")
 certifier <- "Zaire Crooks"
 credentials <- "Forwards teaching team member"
 dir <- "certificates"
 create_workshop_certificates(date, location,
-                            workshop, curriculum,
+                             workshop, curriculum,
                              certifier,
-                            credentials,
-                            attendees,
-                            dir)
+                             credentials,
+                             attendees,
+                             dir)
 ```
+
+[Example certificate]("certificates/package_development_workshop_01.pdf").
 
 ## Legalese
 
