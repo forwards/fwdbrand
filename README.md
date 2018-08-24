@@ -31,6 +31,30 @@ devtools::install_github("forwards/fwdbrand")
 
 * [Create a hex sticker based on the logo](inst/assets-scripts/create_hex_sticker.R).
 
+# Workshop certificate creation
+
+Create a certificate for the participants of a workshop using `create_workshop_certificates`. See example below. PDFs are created in the folder indicated by `dir`.
+
+```r
+# Fake names generated via charlatan::ch_name
+attendees <- c("Marnie Dickinson", "Dr. Marlin Wilderman")
+date <- as.Date("2018-01-01")
+location <- "University of Lorraine"
+workshop <- "Package development workshop"
+curriculum <- system.file("rmarkdown", "templates",
+"workshop_certificate", "resources",
+"default_workshop_contents.md", package = "fwdbrand")
+certifier <- "Zaire Crooks"
+credentials <- "Forwards teaching team member"
+dir <- "certificates"
+create_workshop_certificates(date, location,
+                            workshop, curriculum,
+                             certifier,
+                            credentials,
+                            attendees,
+                            dir)
+```
+
 ## Legalese
 
 The Forwards logo is a derivative of the [R logo](https://www.r-project.org/logo/Rlogo.svg), [©2016 The R Foundation](https://www.r-project.org/logo/), used 
