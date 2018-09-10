@@ -13,7 +13,8 @@ hexSticker::sticker(logo_path, package="",
                     s_width = 0.7,
                     s_height = 0.7,
                     h_size = 2,
-                    s_x = 1, s_y = 1)
+                    s_x = 1, s_y = 1,
+                    dpi = 1000)
 
 # now make border transparent
 height <- magick::image_info(magick::image_read(temp))$height
