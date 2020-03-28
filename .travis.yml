@@ -27,7 +27,7 @@ addons:
       - libwebp-dev
       - libpoppler-cpp-dev
       - poppler-data
-      - texlive-fonts-extra
+      - fonts-open-sans
       - valgrind
 
 after_success:
