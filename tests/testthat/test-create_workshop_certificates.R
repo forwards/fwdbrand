@@ -23,7 +23,7 @@ test_that("create_workshop_certificates works", {
     text <- pdftools::pdf_text(file.path(dir,
                                          "package_development_workshop_01.pdf"))
     expect_true(grepl("Zaire Crooks", text))
-    expect_true(grepl("CERTIFICATE OF ATTENDANCE", text))
+    expect_true(grepl("CERTIFICATE OF COMPLETION", text))
     expect_true(grepl("University of Barcelona", text))
     expect_true(grepl("Marnie Dickinson", text))
     expect_true(grepl("2018-01-01", text))

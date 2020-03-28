@@ -1,5 +1,5 @@
 Package: fwdbrand
-Version: 0.0.0.9000
+Version: 0.0.1
 Title: Distributes Forwards Branding Material
 Description: Distributes Forwards branding material: logos, templates.
 Authors@R: c(person("Heather", "Turner", role = c("aut", "cre"),
@@ -11,7 +11,7 @@ Encoding: UTF-8
 LazyData: true
 ByteCompile: true
 License: GPL-3 + file LICENSE
-RoxygenNote: 6.1.0
+RoxygenNote: 7.1.0
 Imports: 
     snakecase,
     purrr,
