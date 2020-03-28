@@ -12,14 +12,6 @@ before_install:
   - tlmgr install fancyhdr
   - tlmgr install hyperref
   - tlmgr install geometry
-  - tlmgr install parskip
-  - tlmgr install titling
-  - tlmgr install grffile
-  - tlmgr install mathspec
-  - tlmgr install fontspec
-  - tlmgr install varwidth
-  - tlmgr install tcolorbox
-  - tlmgr install background
 
 addons:
   apt:
