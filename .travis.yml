@@ -1,11 +1,11 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: R
-dist: bionic
 sudo: false
 cache: packages
 
 before_install:
+  - tlmgr install opensans
   - tlmgr install wallpaper
   - tlmgr install eso-pic
   - tlmgr install slantsc
@@ -23,11 +23,11 @@ before_install:
 
 addons:
   apt:
+    update: true
     packages:
       - libwebp-dev
       - libpoppler-cpp-dev
       - poppler-data
-      - fonts-open-sans
       - valgrind
 
 after_success:
