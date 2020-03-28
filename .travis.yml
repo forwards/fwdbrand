@@ -13,7 +13,6 @@ before_install:
   - tlmgr install geometry
   - tlmgr install parskip
   - tlmgr install titling
-  - tlmgr install graphicx
   - tlmgr install grffile
   - tlmgr install mathspec
   - tlmgr install fontspec
