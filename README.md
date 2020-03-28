@@ -57,6 +57,10 @@ create_workshop_certificates(date, location,
 
 [Example certificate](certificates/package_development_workshop_01.pdf).
 
+Note that the template uses a lot of LaTeX packages, if you use the TinyTex 
+distribution provided by the **tinytex** package, it will take a long time to 
+compile the first time as it installs the required packages on the fly.
+
 ## Legalese
 
 The Forwards logo is a derivative of the [R logo](https://www.r-project.org/logo/Rlogo.svg), [©2016 The R Foundation](https://www.r-project.org/logo/), used 
