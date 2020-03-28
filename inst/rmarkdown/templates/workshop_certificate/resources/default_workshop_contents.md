@@ -1,9 +1,9 @@
-Making code into an R package
+- Making code into an R package
 
-Collaborative coding with GitHub
+- Collaborative coding with GitHub
 
-Writing a vignette or an article
+- Writing a vignette or an article
 
-Building a package webpage
+- Building a package webpage
 
-Submitting a package to CRAN
+- Submitting a package to CRAN
