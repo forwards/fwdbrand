@@ -80,6 +80,7 @@ cat(as.character(params$workshop), "\n")
 cat(as.character(params$date), ", ", params$location, "\n", sep = "")
 ```
 }
+
 \vspace{0.5cm}
 
 \Large \textbf{
