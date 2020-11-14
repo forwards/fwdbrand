@@ -45,12 +45,12 @@
 }
 
 .title-slide h3 {
-  color: var(--beige);
   font-size: 130%;
+  text-align: right;
 }
 
 .title-slide a {
-  color: var(--gray);
+  color: var(--beige);
 }
 
 /* Alignment */
