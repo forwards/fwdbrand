@@ -1,0 +1,4 @@
+name: R Forwards xaringan template
+description: >
+ Template for creating xaringan slides with R Forwards branding
+create_dir: true

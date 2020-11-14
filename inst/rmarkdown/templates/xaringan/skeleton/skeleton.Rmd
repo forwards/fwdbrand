@@ -1,0 +1,294 @@
+---
+title: "Title"
+subtitle: "Subtitle"
+author: "<br>Author"
+date: "<br>🔗 [link to slides](https://forwards.github.io/)"
+output:
+  xaringan::moon_reader:
+    css: ["style-xaringanthemer.css", "style-custom.css"]
+    lib_dir: libs
+    nature:
+      ratio: "16:9"
+      highlightLines: true
+      highlightStyle: github
+      countIncrementalSlides: false
+---
+
+```{r define-style, include = FALSE}
+# xaringanthemer ---------------------------------------------------------------
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#AD4475", # soft pink
+  secondary_color = "#8D377C", # purple
+  link_color = "#4485ad", # blue
+  code_highlight_color = "#F9E5AF", # light-yellow
+  code_inline_color = "#A7A7A7", # gray
+  base_font_size = "28px",
+  header_h1_font_size = "2rem",
+  header_h2_font_size = "1.75rem",
+  header_h3_font_size = "1.5rem",
+  text_font_google = google_font("Source Sans Pro"),
+  text_font_family = xaringanthemer_font_default("text_font_family"),
+  text_font_weight = xaringanthemer_font_default("text_font_weight"),
+  text_font_url = xaringanthemer_font_default("text_font_url"),
+  text_font_family_fallback = xaringanthemer_font_default("text_font_family_fallback"),
+  text_font_base = "sans-serif",
+  code_font_google = google_font("Source Sans Code"),
+  code_font_family = xaringanthemer_font_default("code_font_family"),
+  code_font_size = "20px",
+  code_font_url = xaringanthemer_font_default("code_font_url"),
+  code_font_family_fallback = xaringanthemer_font_default("code_font_family_fallback"),
+  outfile = "style-xaringanthemer.css"
+)
+
+# R options --------------------------------------------------------------------
+options(
+  htmltools.dir.version = FALSE,
+  dplyr.print_min = 6,
+  dplyr.print_max = 6,
+  tibble.width = 65,
+  width = 65
+)
+
+# figure height, width, dpi ----------------------------------------------------
+
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.width = 8,
+  fig.asp = 0.618,
+  out.width = "60%",
+  fig.align = "center",
+  dpi = 300,
+  message = FALSE
+)
+
+# ggplot2 ----------------------------------------------------------------------
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 18))
+
+# countdown --------------------------------------------------------------------
+library(countdown)
+
+# xaringanExtra ----------------------------------------------------------------
+library(xaringanExtra)
+xaringanExtra::use_panelset()
+
+# hook for setting output number of lines --------------------------------------
+hook_output <- knitr::knit_hooks$get("output")
+knitr::knit_hooks$set(output = function(x, options) {
+  lines <- options$output.lines
+  if (is.null(lines)) {
+    return(hook_output(x, options)) # pass to default hook
+  }
+  x <- unlist(strsplit(x, "\n"))
+  more <- "..."
+  if (length(lines) == 1) { # first n lines
+    if (length(x) > lines) {
+      # truncate the output, but add ....
+      x <- c(head(x, lines), more)
+    }
+  } else {
+    x <- c(more, x[lines], more)
+  }
+  # paste these lines together
+  x <- paste(c(x, ""), collapse = "\n")
+  hook_output(x, options)
+})
+```
+
+layout: true
+  
+<div class="my-footer">
+<span>
+<a href="https://forwards.github.io/" target="_blank">🔗 Link to slides</a>
+</span>
+</div> 
+
+---
+
+class: middle
+
+# Section title
+
+---
+
+class: inverse
+
+## Inverse `class: inverse`
+
+Use for full page figures
+
+---
+
+## Sample slide
+
+- with
+- tight
+- bullet
+- points
+
+---
+
+## Sample slide
+
+- with
+
+- spaced out
+
+- bullet
+
+- points
+
+---
+
+# Colored text
+
+- .pink[pink]
+- .purple[purple]
+- .green[green]
+- .blue[blue]
+- .light-green[light-green]
+- .gray[gray]
+
+---
+
+## Text alignment
+
+left
+
+.right[right]
+
+.center[center]
+
+---
+
+## Font sizes
+
+- .huge[huge = 400%]
+- .larger[larger = 250%]
+- .large[large = 125%]
+- .midi[midi = 85%] 
+- .small[small = 70%]
+- .xsmall[xsmall = 60%]
+- .tiny[tiny = 50%]
+
+---
+
+## Huge numbers
+
+.pull-left[
+  huge-number  
+  .huge-number[.green[1]]
+]
+.pull-right[
+  huge-pink-number    
+  .huge-number[.pink[1]]
+]
+
+---
+
+## Handwriting
+
+- text
+- .hand[hand]
+- .hand[.pink[hand with]]
+- .hand[.green[other colors]]
+
+---
+
+## Two columns, equal width
+
+.pull-left[
+- text 
+- on
+- left
+]
+.pull-right[
+```{r}
+2 + 1
+plot(cars) # <<
+```
+]
+
+---
+
+## Two columns, wider left
+
+.pull-left-wide[
+- text 
+- on
+- left
+]
+.pull-right-narrow[
+```{r}
+2 + 1
+plot(cars) # <<
+```
+]
+
+---
+
+## Two columns, wider right
+
+.pull-left-narrow[
+- text 
+- on
+- left
+]
+.pull-right-wide[
+```{r}
+2 + 1
+plot(cars) # <<
+```
+]
+
+---
+
+## Footnote
+
+Some text<sup>+</sup>
+
+.footnote[<sup>+</sup>Footnote]
+
+---
+
+## Custom boxes
+
+.question[
+A question: What is data science?
+]
+
+.your-turn[
+Some instructions: Figure out what data science is...
+]
+
+.tip[
+A tip: Nobody knows what data science is!
+]
+
+---
+
+## ggplot
+
+```{r out.width="55%"}
+library(ggplot2)
+ggplot(mpg, aes(x = hwy, y = cty, color = drv)) +
+  geom_point(size = 2) +
+  scale_color_viridis_d() # <<
+```
+
+---
+
+## tibble
+
+```{r}
+mpg
+```
+
+---
+
+## kable
+
+```{r}
+library(knitr)
+kable(head(mpg))
+```
