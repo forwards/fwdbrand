@@ -37,7 +37,6 @@
 .title-slide h1, h2, h3 {
   text-align: left;
   font-weight: bold;
-  font-family: Raleway;
 }
 
 .title-slide h2 {
@@ -133,7 +132,7 @@ h1, h2, h3 {
 
 /* Footnote */
 .footnote {
-  padding-left: 30px;
+  padding-left: 36px;
 }
 
 
@@ -148,7 +147,7 @@ div.my-footer {
     border-top: 1px solid var(--gray);
     position: absolute;
     bottom: 0px;
-    height: 40px;
+    height: 48px;
     width: 90%;
 }
 div.my-footer span {
@@ -159,7 +158,7 @@ div.my-footer span {
     color: #8A8A8A;
 }
 div.my-footer a {
-    font-size: 20px;
+    font-size: 25px;
     color: #8A8A8A;
 }
 
